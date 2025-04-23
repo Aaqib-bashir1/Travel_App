@@ -1,0 +1,55 @@
+/* Swiper Slide Content */
+.swiper-slide-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: auto;
+  margin: 0;
+}
+
+/* Media Container */
+.media-container {
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Images & Videos */
+.swiper-image,
+.swiper-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures media fills the container while maintaining aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+
+/* Image Gallery */
+.image-gallery-container {
+  display: inline-block;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
+  .image-gallery-container .trip-detail-slideshow {
+    display: inline-block;
+    width: 700px !important;
+    margin: 0;
+  }
+}
+
+/* Swiper Adjustments */
+.swiper-slide {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.swiper-pagination,
+.swiper-container {
+  margin-bottom: 0 !important;
+}

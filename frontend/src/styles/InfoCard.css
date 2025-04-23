@@ -1,0 +1,118 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  margin-bottom: 1.5rem;
+}
+
+/* Trips Container */
+.trips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+/* Trip Card */
+.trip-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Trip Link */
+.trip-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* Cover Image */
+.trip-cover-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Card Title */
+h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+  padding: 0 12px;
+}
+
+/* Card Details */
+.card-details {
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.card-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .trips-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 0 5px;
+  }
+
+  .trip-card {
+    border-radius: 8px;
+  }
+
+  .trip-cover-image {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .trips-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .trip-card {
+    border-radius: 6px;
+  }
+
+  .trip-cover-image {
+    height: 160px;
+  }
+
+  h2 {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+
+  .card-details {
+    padding: 10px;
+  }
+
+  .card-details p {
+    font-size: 13px;
+  }
+}

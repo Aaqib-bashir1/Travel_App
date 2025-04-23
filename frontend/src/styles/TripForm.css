@@ -1,0 +1,206 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Trip Form Container */
+.trip-form {
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.trip-form:hover {
+  transform: translateY(-5px);
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #444;
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="date"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="file"] {
+  padding: 5px;
+}
+
+/* Focus State for Inputs */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Section Visibility Toggle Buttons */
+.add-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.add-buttons button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-buttons button:hover {
+  background-color: #218838;
+}
+
+.add-buttons button[type="button"] {
+  background-color: #ffc107;
+}
+
+.add-buttons button[type="button"]:hover {
+  background-color: #e0a800;
+}
+
+/* File Input Label */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
+}
+
+/* Form Field Container */
+div {
+  margin-bottom: 1.5rem;
+}
+
+/* Trip Preview Section */
+.trip-preview {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trip-preview h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.trip-preview .preview-item {
+  margin-bottom: 1rem;
+}
+
+.trip-preview .preview-item label {
+  font-weight: bold;
+}
+
+.trip-preview .preview-item span {
+  color: #777;
+  font-style: italic;
+}
+
+.trip-preview .preview-item img {
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.trip-preview .trip-images {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.trip-preview .trip-images img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.trip-preview .trip-cover-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .trip-form {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .trip-preview h2 {
+    font-size: 1.3rem;
+  }
+
+  .trip-preview .trip-images img {
+    width: 120px;
+    height: 80px;
+  }
+}

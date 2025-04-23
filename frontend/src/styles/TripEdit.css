@@ -1,0 +1,154 @@
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: sans-serif;
+    color: #333;
+  }
+  
+  /* Form styling */
+  .trip-edit-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .form-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .form-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #222;
+  }
+  
+  /* Input & button styles */
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  
+  
+  
+  /* Error and success messages */
+  .error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+  }
+  
+  .success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+  }
+  
+  /* Entity lists styling */
+  .entity-lists {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .entity-list {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .entity-list h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .entity-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .entity-item p {
+    margin: 0;
+    flex: 1;
+  }
+  
+  /* Delete button for entities */
+  .delete-button {
+    background: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background: #c82333;
+  }
+  
+  /* Entity forms grid styling */
+  .entity-forms {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 2px;
+    border-radius: 50px;
+    
+  }
+  
+  /* MapPicker container override */
+  .leaflet-container {
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  /* Additional styling for subforms (e.g., ActivityForm) */
+  .activity-form,
+  .hotel-form,
+  .restaurant-form,
+  .place-form {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .activity-form h3,
+  .hotel-form h3,
+  .restaurant-form h3,
+  .place-form h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  

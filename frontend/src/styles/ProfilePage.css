@@ -1,0 +1,131 @@
+:root {
+  --primary-green: #4CAF50;
+  --hover-green: #45a049;
+  --disabled-green: #c8e6c9;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Picture Container */
+.profile-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.profile-picture-container:hover {
+  transform: scale(1.02);
+}
+
+/* Profile Picture Styling */
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary-green);
+  background-color: #f8f9fa;
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-picture:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Cropper Container */
+.cropper-container {
+  position: absolute;
+  top: 0;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cropper Image */
+.cropper-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Crop Button */
+button.crop-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button.crop-button:hover:not(:disabled) {
+  background-color: var(--hover-green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+button.crop-button:disabled {
+  background-color: var(--disabled-green);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+button.crop-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profile-picture {
+    width: 160px;
+    height: 160px;
+  }
+
+  .cropper-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  button.crop-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+    border-width: 2px;
+  }
+
+  .cropper-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  button.crop-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

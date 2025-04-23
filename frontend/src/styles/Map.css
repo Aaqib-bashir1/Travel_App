@@ -1,0 +1,78 @@
+/* Container for the map picker */
+.map-picker {
+  position: relative;
+}
+
+/* Controls container to position the button and search form */
+.map-picker-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* Common Button Styles */
+.map-picker-button,
+.map-picker-search-submit {
+  padding: 8px 12px;
+  background-color: #a1a1a0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.map-picker-button:hover,
+.map-picker-search-submit:hover {
+  background-color: #8e8e8d;
+}
+
+.map-picker-button:active,
+.map-picker-search-submit:active {
+  transform: scale(0.98);
+}
+
+/* Search Form Styling */
+.map-picker-search-form {
+  display: flex;
+  align-items: center;
+}
+
+/* Input Field Styling */
+.map-picker-search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Submit Button Styling */
+.map-picker-search-submit {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 480px) {
+  .map-picker-controls {
+    top: 5px;
+    right: 5px;
+  }
+
+  .map-picker-button,
+  .map-picker-search-submit {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .map-picker-search-input {
+    padding: 6px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,40 @@
+.trip-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid var(--border-color);
+  max-width: 100%;
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.card-details {
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trip-card {
+    border-radius: 8px;
+  }
+
+  .card-details {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trip-card {
+    border-radius: 6px;
+  }
+
+  .card-details {
+    padding: 0.5rem;
+  }
+}
