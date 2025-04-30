@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -14,15 +15,11 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Environments
+.venv/
 
-.env
-.venv
-env/
 venv/
 ENV/
-env.bak/
 venv.bak/
-
 
 # Spyder project settings
 .spyderproject
@@ -44,7 +41,7 @@ dmypy.json
 travel_app_key
 travel_app_key.pub
 
-
+# Media files
 media/
 
 # Logs
@@ -56,6 +53,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node.js
 node_modules
 dist
 dist-ssr
@@ -73,3 +71,6 @@ dist-ssr
 *.sw?
 
 
+
+.env
+*.env
