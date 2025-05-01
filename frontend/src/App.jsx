@@ -15,7 +15,7 @@ import ProfilePage from './pages/ProfilePage';
 import MyTripsPage from './pages/Mytrips';
 import CreateTripPage from './pages/CreateTrip';
 import TripEditPage from './pages/TripEdit';
-import './styles/global.css'; 
+import './styles/Global.css'; 
 
 function RegisterAndLogout(){
   localStorage.clear()
