@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Trip, Activity, Hotel, Restaurant, PlaceVisited,Media
+from django.views.generic import TemplateView
 from .serializers import (
     TripSerializer,
     ActivitySerializer,
@@ -323,3 +324,5 @@ class MediaAPIView(APIView):
         media.delete()
         logger.info("Media deleted successfully, id: %s", media_id)
         return Response({"message": "Media file deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+
+
