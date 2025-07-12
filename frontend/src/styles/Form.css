@@ -1,3 +1,5 @@
+@import './buttons.css';
+
 /* Form Container */
 .form-container {
   display: flex;
@@ -13,8 +15,29 @@
   border: 1px solid #ddd;
 }
 
+/* Form Styles */
+form {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(60,60,60,0.08);
+  padding: 28px 24px;
+  margin: 24px 0;
+  color: #2d2d2d;
+}
+
+/* Form Labels */
+label {
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 6px;
+  display: block;
+}
+
 /* Form Input Fields */
-.form-input {
+.form-input,
+input,
+textarea,
+select {
   width: 100%;
   padding: 0.75rem;
   margin: 0.5rem 0;
@@ -25,40 +48,22 @@
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+input,
+textarea,
+select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #2d2d2d;
+}
+
 .form-input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #0d0d0d;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-}
-
-/* Form Button */
-.form-button {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 1rem;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.form-button:hover {
-  background-color: #8e8e8d;
-  transform: translateY(-2px);
-}
-
-.form-button:active {
-  transform: translateY(1px);
-}
-
-.form-button:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-  opacity: 0.6;
 }
 
 /* Error Message */
@@ -79,11 +84,6 @@
   }
 
   .form-input {
-    padding: 0.6rem;
-    font-size: 0.9rem;
-  }
-
-  .form-button {
     padding: 0.6rem;
     font-size: 0.9rem;
   }

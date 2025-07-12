@@ -1,0 +1,136 @@
+/* Unified Button Styles for Travel App
+
+.button, button, .btn {
+  background: var(--primary-light);
+ 
+  color: var(--primary);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.15s, transform 0.15s;
+  outline: none;
+  box-shadow: none;
+}
+
+.button.secondary, button.secondary, .btn.secondary {
+  background: var(--secondary-light);
+  color: var(--primary);
+}
+
+.button:disabled, button:disabled, .btn:disabled {
+  background: var(--secondary-light);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled), button:hover:not(:disabled), .btn:hover:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.button.secondary:hover:not(:disabled), button.secondary:hover:not(:disabled), .btn.secondary:hover:not(:disabled) {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.button:focus-visible, button:focus-visible, .btn:focus-visible,
+.button:active:not(:disabled), button:active:not(:disabled), .btn:active:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 0 0 2px var(--primary-dark) inset;
+  outline: none;
+  transform: translateY(1px);
+}
+
+.button.secondary:focus-visible, button.secondary:focus-visible, .btn.secondary:focus-visible,
+.button.secondary:active:not(:disabled), button.secondary:active:not(:disabled), .btn.secondary:active:not(:disabled) {
+  background: var(--secondary);
+  color: #fff;
+  box-shadow: 0 0 0 2px var(--secondary-dark) inset;
+  outline: none;
+  transform: translateY(1px);
+}
+
+.button:active:not(:disabled), button:active:not(:disabled), .btn:active:not(:disabled) {
+  background: var(--primary-dark);
+  color: #fff;
+  transform: translateY(1px);
+}
+
+.button.secondary:active:not(:disabled), button.secondary:active:not(:disabled), .btn.secondary:active:not(:disabled) {
+  background: var(--secondary-dark);
+  color: #fff;
+} */
+
+/* Unified Button Styles for Travel App */
+
+/* Base Button Style */
+.button, button, .btn {
+  background: #e0e0e0; /* Light grey */
+  color: #333; /* High contrast text */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.15s, transform 0.15s;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover, Focus, Active - Turn Black with White Text & Shadow */
+.button:hover:not(:disabled),
+button:hover:not(:disabled),
+.btn:hover:not(:disabled),
+.button:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.button:active:not(:disabled),
+button:active:not(:disabled),
+.btn:active:not(:disabled) {
+  background: #000; /* Black background */
+  color: #fff; /* White text */
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3); /* Highlight ring */
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Disabled State */
+.button:disabled,
+button:disabled,
+.btn:disabled {
+  background: #f0f0f0; /* Lighter grey */
+  color: #999; /* Muted text */
+  border: 1px solid #ddd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Optional: Secondary Button Variant (if used elsewhere) */
+.button.secondary,
+button.secondary,
+.btn.secondary {
+  background: #d3d3d3;
+  color: #222;
+  border: 1px solid #bbb;
+}
+
+.button.secondary:hover:not(:disabled),
+button.secondary:hover:not(:disabled),
+.btn.secondary:hover:not(:disabled),
+.button.secondary:active:not(:disabled),
+button.secondary:active:not(:disabled),
+.btn.secondary:active:not(:disabled),
+.button.secondary:focus-visible,
+button.secondary:focus-visible,
+.btn.secondary:focus-visible {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}

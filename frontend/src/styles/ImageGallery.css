@@ -1,4 +1,5 @@
-/* Swiper Slide Content */
+/* 
+.Swiper .Slide Content
 .swiper-slide-content {
   display: flex;
   justify-content: center;
@@ -8,7 +9,7 @@
   margin: 0;
 }
 
-/* Media Container */
+/* Media Container 
 .media-container {
   width: 95%;
   height: auto;
@@ -19,22 +20,22 @@
   margin: 0;
 }
 
-/* Images & Videos */
+/* Images & Videos 
 .swiper-image,
 .swiper-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures media fills the container while maintaining aspect ratio */
-  border-radius: 8px; /* Optional: Rounded corners */
+  object-fit: cover; /* Ensures media fills the container while maintaining aspect ratio 
+  border-radius: 8px; /* Optional: Rounded corners 
 }
 
-/* Image Gallery */
+/* Image Gallery
 .image-gallery-container {
   display: inline-block;
   margin: 0;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments
 @media screen and (min-width: 768px) {
   .image-gallery-container .trip-detail-slideshow {
     display: inline-block;
@@ -43,7 +44,7 @@
   }
 }
 
-/* Swiper Adjustments */
+/* Swiper Adjustments 
 .swiper-slide {
   margin: 0 !important;
   padding: 0 !important;
@@ -52,4 +53,113 @@
 .swiper-pagination,
 .swiper-container {
   margin-bottom: 0 !important;
+} */
+/* Container fills the parent width */
+.image-gallery-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Swiper wrapper takes full width */
+.swiper-main {
+  width: 100% !important;
+}
+
+/* Each slide content takes full width */
+.swiper-slide {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slide inner content */
+.swiper-slide-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media container with rounded edges */
+.media-container {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Images & videos */
+.swiper-image,
+.swiper-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.swiper-slide:hover .swiper-image,
+.swiper-slide:hover .swiper-video {
+  transform: scale(1.01);
+}
+
+/* Caption overlay */
+.swiper-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Pagination positioning */
+.swiper-pagination {
+  position: relative !important;
+  bottom: 0 !important;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  margin: 0 4px !important;
+  transition: background 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  background: #007aff;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .swiper-image,
+  .swiper-video {
+    max-height: 300px;
+  }
+  .swiper-caption {
+    font-size: 14px;
+  }
+}
+
+/* Image Gallery Styles */
+.image-gallery {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.08);
+  color: #2d2d2d;
+}
+
+.image-gallery img,
+.image-gallery video {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(60,60,60,0.10);
 }

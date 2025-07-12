@@ -172,7 +172,7 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 # CORS settings
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
+    "http://localhost:5173","localhost:8000"
 ]
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -184,19 +184,23 @@ CORS_ALLOW_HEADERS = list(default_headers)  # Allow default headers
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
-STORAGES = {
-    "default": {
-        "BACKEND": "storages.backends.azure_storage.AzureStorage",
-        "OPTIONS": {
-            "connection_string": os.getenv("AZURE_CONNECTION_STRING"),
-            "azure_container": "media",
-        },
-    },
-    "staticfiles": {
-        "BACKEND": "storages.backends.azure_storage.AzureStorage",
-        "OPTIONS": {
-           "connection_string": os.getenv("AZURE_CONNECTION_STRING"),
-            "azure_container": "static",
-        },
-    },
-}
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "storages.backends.azure_storage.AzureStorage",
+#         "OPTIONS": {
+#             "connection_string": os.getenv("AZURE_CONNECTION_STRING"),
+#             "azure_container": "media",
+#         },
+#     },
+#     "staticfiles": {
+#         "BACKEND": "storages.backends.azure_storage.AzureStorage",
+#         "OPTIONS": {
+#            "connection_string": os.getenv("AZURE_CONNECTION_STRING"),
+#             "azure_container": "static",
+#         },
+#     },
+# }
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',  # or whatever your frontend runs on
+    'http://127.0.0.1:3000',
+]

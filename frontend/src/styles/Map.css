@@ -58,6 +58,16 @@
   border-radius: 0 4px 4px 0;
 }
 
+/* Map Container Styling */
+.map-container {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(60,60,60,0.08);
+  padding: 18px;
+  margin: 18px 0;
+  color: #2d2d2d;
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 480px) {
   .map-picker-controls {

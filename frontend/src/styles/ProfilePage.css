@@ -1,8 +1,21 @@
-:root {
-  --primary-green: #4CAF50;
-  --hover-green: #45a049;
-  --disabled-green: #c8e6c9;
-  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+@import './buttons.css';
+
+/* Profile Page */
+.profile-page {
+  background: #f7f9fb;
+  min-height: 100vh;
+  padding: 32px 0;
+  color: #2d2d2d;
+}
+
+/* Profile Header */
+.profile-header {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(60,60,60,0.08);
+  padding: 24px 20px;
+  margin-bottom: 24px;
+  color: #2d2d2d;
 }
 
 /* Profile Picture Container */
@@ -26,7 +39,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid var(--primary-green);
+  border: 3px solid var(--primary);
   background-color: #f8f9fa;
   box-shadow: var(--shadow-light);
   cursor: pointer;
@@ -66,7 +79,7 @@
 button.crop-button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background-color: var(--primary-green);
+  background-color: var(--primary);
   color: white;
   border: none;
   border-radius: 8px;
@@ -79,13 +92,13 @@ button.crop-button {
 }
 
 button.crop-button:hover:not(:disabled) {
-  background-color: var(--hover-green);
+  background-color: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-light);
 }
 
 button.crop-button:disabled {
-  background-color: var(--disabled-green);
+  background-color: var(--disabled);
   cursor: not-allowed;
   opacity: 0.7;
 }

@@ -1,15 +1,58 @@
-.body{
-
-  background-color: #cdcdcd;
-  color: #333;
+:root {
+  --light-gray: #f4f4f4; /* or any subtle gray you prefer */
+  --text-color: #333;
+  --secondary-color: #434445;
+  --shadow-color: rgba(60, 60, 60, 0.08);
+  --primary: #000000;
+  --primary-dark: #1a1a1a;
+  --primary-light: #444444;
+  --secondary: #888f96;
+  --secondary-dark: #49515a;
+  --secondary-light: #f7f9fb;
+  --background: #f7f9fb;
+  --card-bg: #fff;
+  --text: #2d2d2d;
+  --muted: #666;
+  --border: #ddd;
+  --shadow: 0 4px 18px rgba(60,60,60,0.08);
 }
+body {
+  background: #f7f9fb;
+  color: #2d2d2d;
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(60,60,60,0.08);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
 #root {
   max-width: 1280px;
   height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: rgb(179, 179, 179);
+  /* background-color: rgb(179, 179, 179); */
+  background-color: #fff;  /* <-- Set root background to white */
+  color: #2d2d2d;             /* <-- Text color for dark gray */
+
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -38,12 +81,4 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

@@ -1,3 +1,5 @@
+@import './buttons.css';
+
 /* Basic Reset */
 * {
   margin: 0;
@@ -17,9 +19,9 @@ body {
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(60, 60, 60, 0.08);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -44,13 +46,18 @@ form {
 /* Input Styles */
 input[type="text"],
 input[type="date"],
-input[type="file"] {
+input[type="file"],
+.trip-form input,
+.trip-form textarea,
+.trip-form select {
   width: 100%;
   padding: 10px;
   margin-bottom: 1rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  background: #f8fafc;
+  color: #2d2d2d;
   transition: border-color 0.3s;
 }
 
@@ -62,30 +69,8 @@ input[type="file"] {
 input[type="text"]:focus,
 input[type="date"]:focus,
 input[type="file"]:focus {
-  border-color: #007bff;
+  border-color: var(--primary);
   outline: none;
-}
-
-/* Button Styling */
-button {
-  padding: 12px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 1rem;
-  transition: background-color 0.3s ease-in-out;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Section Visibility Toggle Buttons */
@@ -119,10 +104,10 @@ button:focus {
 
 /* File Input Label */
 label {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 6px;
   display: block;
-  color: #555;
 }
 
 /* Form Field Container */

@@ -24,6 +24,7 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from rest_framework import status
 from django.conf import settings
+from django.core.cache import cache
 import os
 import logging
 logger = logging.getLogger(__name__)
@@ -53,6 +54,7 @@ class BaseAPIView(APIView):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            cache.delete(self.model.__name__)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         print(serializer.errors,type(serializer.errors))
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -62,12 +64,15 @@ class BaseAPIView(APIView):
         serializer = self.serializer_class(instance, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
+            cache.delete(self.model.__name__)
             return Response(serializer.data)
+        
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
         instance = get_object_or_404(self.model, pk=pk)
         instance.delete()
+        cache.delete(self.model.__name__)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
@@ -120,7 +125,9 @@ class TripAPIView(BaseAPIView):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
+            cache.delete('Trip')
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+            
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -132,7 +139,9 @@ class ActivityAPIView(BaseAPIView):
             serializer = self.serializer_class(data=request.data)
             if serializer.is_valid():
                 serializer.save()
+                cache.delete('Activity')
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
+            
             print(serializer.errors,type(serializer.errors))
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -168,71 +177,6 @@ class PlaceVisitedListAPIView(APIView):
         places_visited = PlaceVisited.objects.all()
         serializer = PlaceVisitedSerializer(places_visited, many=True)
         return Response(serializer.data)
-
-
-
-
-# class MediaAPIView(APIView):
-#     permission_classes = [IsAuthenticated]
-#     parser_classes = [MultiPartParser, FormParser]  # Allows handling file uploads
-#     def get(self, request, media_id):
-#         """Retrieve a specific media file."""
-#         media = get_object_or_404(Media, id=media_id)
-#         serializer = MediaSerializer(media)
-#         return Response(serializer.data)
-
-#     def post(self, request, **kwargs):
-#     # Determine what kind of content this media is for
-#         if 'trip_id' in kwargs:
-#             obj = get_object_or_404(Trip, id=kwargs['trip_id'])
-#         elif 'activity_id' in kwargs:
-#             obj = get_object_or_404(Activity, id=kwargs['activity_id'])
-#         elif 'hotel_id' in kwargs:
-#             obj = get_object_or_404(Hotel, id=kwargs['hotel_id'])
-#         elif 'restaurant_id' in kwargs:
-#             obj = get_object_or_404(Restaurant, id=kwargs['restaurant_id'])
-#         elif 'place_id' in kwargs:
-#             obj = get_object_or_404(PlaceVisited, id=kwargs['place_id'])
-#         else:
-#             return Response({'error': 'No valid content ID provided'}, status=400)
-
-#         serializer = MediaSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save(content_object=obj)
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-#     def put(self, request, media_id):
-#         """Update an existing media file (change caption or replace file)."""
-#         media = get_object_or_404(Media, id=media_id)
-
-#         # Handle file replacement
-#         if "file" in request.data:
-#             # Delete old file
-#             if media.file:
-#                 old_file_path = os.path.join(settings.MEDIA_ROOT, str(media.file))
-#                 if os.path.exists(old_file_path):
-#                     os.remove(old_file_path)
-
-#         serializer = MediaSerializer(media, data=request.data, partial=True)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-#     def delete(self, request, media_id):
-#         """Delete a media file."""
-#         media = get_object_or_404(Media, id=media_id)
-
-#         # Remove file from storage
-#         if media.file:
-#             file_path = os.path.join(settings.MEDIA_ROOT, str(media.file))
-#             if os.path.exists(file_path):
-#                 os.remove(file_path)
-
-#         media.delete()
-#         return Response({"message": "Media file deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
 
 
 

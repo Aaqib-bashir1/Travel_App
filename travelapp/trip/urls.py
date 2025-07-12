@@ -88,7 +88,7 @@ urlpatterns = [
     path('all-places-visited/<int:pk>/', PlaceVisitedListAPIView.as_view(), name='all-places-visited-detail'),  # Retrieve a specific place visited (public)
 
     # Media Endpoints
-    path("my-trips/<int:pk>/media/", MediaAPIView.as_view(), name="trip-media"),  # ✅ POST media for a trip
+    path("my-trips/<int:trip_id>/media/", MediaAPIView.as_view(), name="trip-media"),  # ✅ POST media for a trip
     path('activities/<int:activity_id>/media/', MediaAPIView.as_view(), name='activity-media-upload'),
     # Hotel media
     path('hotels/<int:hotel_id>/media/', MediaAPIView.as_view(), name='hotel-media-upload'),

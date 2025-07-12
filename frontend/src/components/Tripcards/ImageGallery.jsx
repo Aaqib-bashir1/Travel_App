@@ -10,13 +10,13 @@ import 'swiper/css/autoplay'; // Import Autoplay styles
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'; // Import Swiper's modules
 import '../../styles/ImageGallery.css'; // Your custom styles
 
-const ImageGallery = ({ media = [], galleryWidth = '400px', galleryHeight = 'auto' }) => {
+const ImageGallery = ({ media = [], galleryWidth = '100%', galleryHeight = 'auto' }) => {
   if (!media.length) {
     return <p>No images or videos available</p>;
   }
 
   return (
-    <div className="image-gallery-container" style={{ width: galleryWidth, height: galleryHeight }}>
+    <div className="image-gallery-container" >
       <Swiper
         spaceBetween={10} // Space between slides
         slidesPerView={1} // Only show 1 slide at a time

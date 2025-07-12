@@ -1,227 +1,217 @@
-/* .navbar {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+/* ---------------------- General Navbar Styles ---------------------- */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
 }
 
 .navbar-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.navbar-logo a {
-  color: white;
+.navbar-logo #brand {
+  color: #2d2d2d;
+  font-weight: 700;
+  font-size: 1.3rem;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
 }
 
-.navbar-links ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
+.navbar-logo #brand:hover {
+  color: #2d2d2d;
 }
 
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-}
-
-.logout-button {
+/* ---------------------- Hamburger SVG Button Styles ---------------------- */
+.hamburger-menu {
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
-  font-size: 1rem;
-}
-
-.logout-button:hover {
-  text-decoration: underline;
-}
- 
-
- */
-
- /* General Navbar Styles */
-.navbar {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  position: relative;
-  z-index: 100;
-}
-
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.navbar-logo a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* --- Hamburger SVG Button Styles --- */
-.hamburger-menu {
-  /* Reset button styles */
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  /* Sizing and positioning */
-  width: 30px; /* Match SVG width */
-  height: 30px; /* Match SVG height */
-  display: inline-flex; /* Use flex/inline-flex for alignment */
-  align-items: center;
-  justify-content: center;
-  overflow: visible; /* Allow animated parts to potentially go outside bounds if needed */
+  display: none;
+  margin-left: 18px;
+  z-index: 20;
 }
 
 .hamburger-menu:focus {
-  outline: none; /* Or provide a visible focus style */
-  /* Example focus style: add a ring */
-  /* box-shadow: 0 0 0 2px skyblue; */
+  outline: none;
 }
 
 .hamburger-menu svg {
-  /* Ensure SVG takes up button space */
   width: 100%;
   height: 100%;
 }
 
-/* SVG Line base styles */
 .hamburger-menu svg #top-line,
 .hamburger-menu svg #bottom-line,
 .hamburger-menu svg #middle-line {
   transform-box: fill-box;
   transform-origin: center;
-  transition: transform 0.6s ease-out; /* Basic transition for smooth reverse */
+  transition: transform 0.6s ease-out;
 }
 
-/* --- Trigger animations when .open class is present --- */
 .hamburger-menu.open svg #top-line {
-  /* Use the 'down-rotate' animation */
   animation: down-rotate 0.6s ease-out both;
 }
 
 .hamburger-menu.open svg #bottom-line {
-  /* Use the 'up-rotate' animation */
   animation: up-rotate 0.6s ease-out both;
 }
 
 .hamburger-menu.open svg #middle-line {
-  /* Use the 'hide' animation */
   animation: hide 0.6s ease-out forwards;
 }
 
-/* --- Keyframe definitions (Copied from your example) --- */
+/* ---------------------- Keyframes ---------------------- */
 @keyframes up-rotate {
-	0% {
-		animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
-		transform: translateY(0px);
-	}
-	30% {
-		transform-origin: center;
-		animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-		transform: translateY(-20px); /* Adjusted Y translate */
-	}
-	100% {
-		transform-origin: center;
-		transform: translateY(-20px) rotate(45deg) scale(0.9); /* Adjusted Y translate */
-	}
+  0% {
+    animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+    transform: translateY(0px);
+  }
+  30% {
+    transform-origin: center;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(-20px);
+  }
+  100% {
+    transform-origin: center;
+    transform: translateY(-20px) rotate(45deg) scale(0.9);
+  }
 }
 
 @keyframes down-rotate {
-	0% {
-		animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
-		transform: translateY(0px);
-	}
-	30% {
-		transform-origin: center;
-		animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-		transform: translateY(20px); /* Adjusted Y translate */
-	}
-	100% {
-		transform-origin: center;
-		transform: translateY(20px) rotate(-45deg) scale(0.9); /* Adjusted Y translate */
-	}
+  0% {
+    animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+    transform: translateY(0px);
+  }
+  30% {
+    transform-origin: center;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(20px);
+  }
+  100% {
+    transform-origin: center;
+    transform: translateY(20px) rotate(-45deg) scale(0.9);
+  }
 }
 
 @keyframes hide {
-	29% {
-		opacity: 1;
-	}
-	30% {
-		opacity: 0; /* Start hiding */
-	}
-  /* Ensure stays hidden, 'forwards' fill mode helps but explicit rule is safer */
-	100% {
-		opacity: 0;
-	}
+  29% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ---------------------- Button & Navbar Link Styles ---------------------- */
+
+/* Shared button style for buttons or links */
+.button, button, .btn, .navbar-links a {
+  background: #e0e0e0;        /* Light grey */
+  color: #333;                /* High contrast */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.15s, transform 0.15s;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover, Focus, and Active styles with white text */
+.button:hover:not(:disabled),
+button:hover:not(:disabled),
+.btn:hover:not(:disabled),
+.navbar-links a:hover,
+
+.button:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.navbar-links a:focus-visible,
+
+.button:active:not(:disabled),
+button:active:not(:disabled),
+.btn:active:not(:disabled),
+.navbar-links a:active {
+  background: #000;
+  color: #fff !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 
-/* --- Navigation Links Styles (Mobile - Default) --- */
+/* Disabled state */
+.button:disabled,
+button:disabled,
+.btn:disabled {
+  background: #f0f0f0;
+  color: #999;
+  border: 1px solid #ddd;
+  cursor: not-allowed;
+}
+
+/* Active nav link */
+.navbar-links a.active {
+  background: #000 !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset li hover effects */
+.navbar-links li:hover,
+.navbar-links li:focus-within {
+  background: transparent;
+}
+
+.navbar-links li:hover a,
+.navbar-links li:focus-within a {
+  color: #000;
+}
+
+/* ---------------------- Navigation Layout ---------------------- */
 .navbar-links {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #444;
-  padding: 1rem 0;
-  border-top: 1px solid #555;
-}
-
-.navbar-links.active {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .navbar-links ul {
+  display: flex;
+  gap: 18px;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
 }
 
 .navbar-links li {
-  width: 100%;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 0.8rem 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.navbar-links a:hover,
-.navbar-links a:focus {
-  background-color: #555;
-}
-
-/* --- Desktop Styles --- */
+/* ---------------------- Desktop Styles ---------------------- */
 @media (min-width: 768px) {
   .navbar-logo a {
     font-size: 1.5rem;
   }
 
   .hamburger-menu {
-    display: none; /* Hide hamburger button on desktop */
+    display: none;
   }
 
   .navbar-links {
@@ -244,13 +234,76 @@
 
   .navbar-links a {
     padding: 0.5rem 1rem;
-    display: inline-block;
     width: auto;
   }
 
   .navbar-links a:hover,
   .navbar-links a:focus {
-    background-color: transparent;
     text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* ---------------------- Mobile Styles ---------------------- */
+@media (max-width: 900px) {
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    right: 24px;
+    top: 18px;
+    z-index: 20;
+  }
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    box-shadow: 0 4px 18px rgba(60, 60, 60, 0.08);
+    border-radius: 0 0 12px 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    z-index: 9;
+  }
+
+  .navbar-links.active {
+    max-height: 400px;
+    padding: 12px 0;
+    transition: max-height 0.3s;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: 1.08rem;
+    border-left: 4px solid transparent;
+  }
+
+  .navbar-links a:hover,
+  .navbar-links a:focus,
+  .navbar-links a:active {
+    border-left: 4px solid #fff;
+    transform: none;
+  }
+
+  .navbar-links a.active {
+    border-left: 4px solid #fff;
   }
 }

@@ -1,3 +1,5 @@
+@import './buttons.css';
+
 /* .trip-create-page {
     max-width: 1200px;
     margin: 2rem auto;
@@ -141,7 +143,7 @@
   }
   
   .form-input:focus, textarea:focus {
-    border-color: #007bff;
+    border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
     outline: none;
   }
@@ -159,31 +161,20 @@
     padding-bottom: 1rem;
   }
   
-  button {
-    background: #333;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.25rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #8e8e8d;
-    transform: scale(1.05);
-  }
-  
-  button:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-  }
-  
   .map-container {
     margin: 1.5rem 0;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #ddd;
+  }
+  
+  .trip-create-container {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(60,60,60,0.08);
+    padding: 28px 24px;
+    margin: 24px 0;
+    color: #2d2d2d;
   }
   
   /* Mobile Responsive */
@@ -202,4 +193,3 @@
       gap: 1rem;
     }
   }
-  

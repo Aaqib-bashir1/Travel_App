@@ -1,53 +1,145 @@
+@import './buttons.css';
+
 /* General Styles */
 .trip-detail-page {
-  padding: 20px;
-  max-width: 1200px;
+  background: #f7f9fb;
+  padding: 32px 0;
+  max-width: 1100px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #2d2d2d;
 }
-.cover-image {
+
+/* Grid Layout */
+.trip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 32px 0;
+}
+
+@media (max-width: 900px) {
+  .trip-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Trip Card */
+.trip-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(60,60,60,0.08);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;}
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.trip-card:hover {
+  box-shadow: 0 8px 32px rgba(60,60,60,0.13);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Cover Image */
+.cover-image {
+  width: 100%;
+  height: 140px;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
 .cover-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.10);
+  display: block;
 }
 
+.trip-card:hover .cover-image img {
+  transform: scale(1.04);
+}
+
+/* Trip Details */
 .trip-details {
-  margin: 20px 0;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: all 0.3s ease-in-out;
+  padding: 18px 20px 16px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 0 0 14px 14px;
+  text-align: left;
 }
 
-.trip-details:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.trip-details h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
-  font-weight: 600;
+.trip-details h1,
+.trip-details h2 {
+  font-size: 1.25rem;
+  margin: 0 0 10px 0;
+  color: #2d2d2d;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .trip-details p {
   font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  color: #444;
+  margin: 0 0 10px 0;
+  line-height: 1.6;
 }
 
 .trip-details .highlight {
-  font-weight: 700;
-  color: #333;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.trip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 0.97rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.trip-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Info Card */
+.info-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.08);
+  transition: box-shadow 0.2s;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 16px rgba(60,60,60,0.13);
+}
+
+.info-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
+.info-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.98rem;
 }
 
 /* Toggle Buttons */
@@ -55,43 +147,32 @@
   display: flex;
   gap: 10px;
   margin: 20px 0;
+  justify-content: center;
 }
 
 .toggle-buttons button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #6c7a89;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s, transform 0.2s;
+  color: #fff;
 }
 
 .toggle-buttons button:hover {
-  background-color: #8e8e8d;
+  background-color: #b2bec3;
   transform: scale(1.05);
 }
 
 .toggle-buttons button.active {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--primary);
+  color: #fff;
   transform: scale(1.05);
 }
 
-/* Info Card */
-.info-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin: 10px 0;
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
+/* Card Preview */
 .card-preview {
   display: flex;
   align-items: center;
@@ -100,6 +181,7 @@
   cursor: pointer;
   background-color: #f9f9f9;
   transition: background-color 0.3s;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.06);
 }
 
 .card-preview:hover {
@@ -111,24 +193,29 @@
   height: 60px;
   object-fit: cover;
   border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.10);
 }
 
 .card-preview h3 {
   margin: 0 10px;
   flex-grow: 1;
+  color: #2d2d2d;
 }
 
 .card-preview span {
   font-size: 1.2rem;
+  color: #2d2d2d;
 }
 
 .card-details {
   padding: 10px;
   background-color: white;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.06);
 }
 
 .card-details p {
   margin: 5px 0;
+  color: #555;
 }
 
 /* Image Gallery */
@@ -140,7 +227,7 @@
 .media-container video {
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(60,60,60,0.10);
 }
 
 .swiper-caption {
@@ -151,32 +238,54 @@
 }
 
 /* Responsive Layout */
+@media (max-width: 900px) {
+  .trip-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .trip-detail-page {
     padding: 10px;
   }
-
-  .cover-image img {
-    height: 250px;
+  .cover-image {
+    height: 90px;
   }
-
+  .cover-image img {
+    height: 90px;
+  }
   .trip-details h1 {
     font-size: 1.8rem;
   }
-
   .trip-details p {
     font-size: 0.95rem;
   }
-
   .toggle-buttons {
     flex-direction: column;
   }
-
   .card-preview h3 {
     font-size: 1.1rem;
   }
-
   .swiper-caption {
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trip-detail-page {
+    padding: 8px 0;
+  }
+  .trip-details {
+    padding: 12px 8px 10px 8px;
+  }
+  .cover-image {
+    height: 70px;
+  }
+  .cover-image img {
+    height: 70px;
+  }
+  .trip-grid {
+    gap: 14px;
   }
 }

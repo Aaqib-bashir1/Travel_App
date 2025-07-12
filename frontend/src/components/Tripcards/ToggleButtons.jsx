@@ -5,8 +5,7 @@ const ToggleButtons = ({ activeSection, setActiveSection }) => {
     { key: 'places_visited', label: 'Places Visited' },
     { key: 'activities', label: 'Activities' },
     { key: 'hotels', label: 'Hotels' },
-    { key: 'restaurants', label: 'Restaurants' },
-    { key: 'city', label:'city'}
+    { key: 'restaurants', label: 'Restaurants' }
   ];
 
   return (

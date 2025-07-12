@@ -1,3 +1,5 @@
+@import './buttons.css';
+
 /* General Styles */
 * {
   margin: 0;
@@ -70,6 +72,33 @@ h2 {
   margin: 5px 0;
   font-size: 14px;
   color: #555;
+}
+
+/* Info Card */
+.info-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 12px 0;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+  transition: box-shadow 0.2s;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 16px rgba(60, 60, 60, 0.13);
+}
+
+.info-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
+.info-card p {
+  margin: 0 0 8px 0;
+  color: #555;
+  font-size: 0.98rem;
 }
 
 /* Responsive Adjustments */

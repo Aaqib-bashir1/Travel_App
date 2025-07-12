@@ -153,9 +153,10 @@ class PlaceVisited(models.Model):
     coordinates = geomodels.PointField(blank=True, null=True, verbose_name="Coordinates")
     description = models.TextField(verbose_name="Description")
     cost = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name="Cost")
-    best_time_to_visit = models.CharField(
-        max_length=50, choices=BestTimeToVisitChoices.choices, null=True, verbose_name="Best Time to Visit"
-    )
+    # best_time_to_visit = models.CharField(
+    #     max_length=50, choices=BestTimeToVisitChoices.choices, null=True, verbose_name="Best Time to Visit"
+    # )
+    best_time_to_visit = models.CharField(max_length=50,blank=True,null=True, verbose_name="Best Time to Visit")
     media = GenericRelation(Media, related_query_name='placevisited')
 
     def __str__(self):
@@ -219,9 +220,10 @@ class Activity(models.Model):
     description = models.TextField(max_length=255, verbose_name="Description")
     media = GenericRelation(Media, related_query_name='activity')
     
-    best_time_to_visit = models.CharField(
-        max_length=50, choices=BestTimeToVisitChoices.choices, null=True, verbose_name="Best Time to Visit"
-    )
+    # best_time_to_visit = models.CharField(
+    #     max_length=50, choices=BestTimeToVisitChoices.choices, null=True, verbose_name="Best Time to Visit"
+    # )
+    best_time_to_visit = models.CharField(max_length=50,blank=True,null=True,verbose_name="Best Time to Visit")
     def __str__(self):
         return self.name
 
@@ -257,7 +259,7 @@ class Restaurant(models.Model):
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='restaurants', verbose_name="Trip")
     name = models.CharField(max_length=255, verbose_name="Name")
     cost = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Cost")
-    meal_type = models.CharField(max_length=100, choices=MealTypeChoices.choices, verbose_name="Meal Type")
+    meal_type = models.CharField(max_length=100, null=True,blank=True, verbose_name="Meal Type")
     location=geomodels.PointField(blank=True, null=True, verbose_name="Location")
     media = GenericRelation(Media, related_query_name='restaurant')
     rating=models.CharField(max_length=100, choices=RATING_CHOICES,blank=True,null=True)
