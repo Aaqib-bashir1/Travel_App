@@ -72,6 +72,6 @@ dist-ssr
 
 
 
-.env
-.env
-.env
+travelapp/.env
+frontend/.env
+
